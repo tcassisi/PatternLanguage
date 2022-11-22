@@ -19,7 +19,12 @@
 namespace pl::hlp {
 
     [[noreturn]] inline void unreachable() {
+        //C++23: std::unreachable() 
+        #ifdef _MSC_VER
+        __assume(false);
+        #else
         __builtin_unreachable();
+        #endif
     }
 
     inline void unused(auto && ... x) {
