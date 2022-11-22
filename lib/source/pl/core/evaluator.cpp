@@ -1,3 +1,5 @@
+#include <pl/helpers/types.hpp>
+
 #include <pl/core/evaluator.hpp>
 #include <pl/patterns/pattern.hpp>
 

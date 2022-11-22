@@ -3,6 +3,14 @@
 #include <cstddef>
 #include <cstdint>
 
+#ifdef _MSC_VER
+#ifndef __MSVC_INT128_HPP
+#include <ranges>
+typedef std::_Unsigned128 __uint128_t;
+typedef std::_Signed128 __int128_t;
+#endif
+#endif
+
 namespace pl {
 
     using u8   = std::uint8_t;

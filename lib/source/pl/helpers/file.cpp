@@ -1,4 +1,7 @@
-#include <unistd.h>
+//#include <unistd.h>
+#define OS_WINDOWS
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <cstring>
 
 #include <pl/helpers/utils.hpp>

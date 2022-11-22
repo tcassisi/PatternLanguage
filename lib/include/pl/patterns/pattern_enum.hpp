@@ -73,7 +73,7 @@ namespace pl::ptrn {
         }
 
         [[nodiscard]] std::string toString() const override {
-            u64 value = core::Token::literalToUnsigned(this->getValue());
+            u64 value = (u64)core::Token::literalToUnsigned(this->getValue());
 
             std::string result = this->getTypeName() + "::";
 

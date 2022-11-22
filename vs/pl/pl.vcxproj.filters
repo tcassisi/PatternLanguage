@@ -22,12 +22,42 @@
     <Filter Include="fmt">
       <UniqueIdentifier>{d0ef9113-9d2f-4a06-8fc8-228e6516f20c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\pl">
+      <UniqueIdentifier>{950946c4-38ba-4ac9-8319-6133fe42aa46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pl\core">
+      <UniqueIdentifier>{6637958a-2c86-46fa-bb99-f5575b22bf07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pl\helpers">
+      <UniqueIdentifier>{30b13fb3-3a6e-4043-9be2-cc2f07739afc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pl\lib">
+      <UniqueIdentifier>{83384f8b-3309-4c93-9146-adbb3ee7f1cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pl\lib\std">
+      <UniqueIdentifier>{0985f897-1c32-4852-ba48-b27f897774d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pl\core">
+      <UniqueIdentifier>{b8e9c17e-5ce8-4e71-a1d4-a4250ffb0fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pl\helpers">
+      <UniqueIdentifier>{0e31d4a6-90dd-4a88-ba78-922df771248d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pl\lib">
+      <UniqueIdentifier>{3bda8314-daa3-456d-8e7d-fb90aa2fa0b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pl\patterns">
+      <UniqueIdentifier>{608c52e3-88fa-4722-af7e-8e2a7ef4acb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pl\core\ast">
+      <UniqueIdentifier>{95f64f68-2f71-4b4d-97cc-b8015c1953ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pl\core\errors">
+      <UniqueIdentifier>{3e100a41-959f-485e-85f1-95cb282bd923}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern.hpp">
@@ -129,11 +159,218 @@
     <ClInclude Include="..\..\external\fmt\include\fmt\xchar.h">
       <Filter>fmt</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\api.hpp">
+      <Filter>Header Files\pl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\pattern_language.hpp">
+      <Filter>Header Files\pl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\pattern_visitor.hpp">
+      <Filter>Header Files\pl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\helpers\concepts.hpp">
+      <Filter>Header Files\pl\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\helpers\file.hpp">
+      <Filter>Header Files\pl\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\helpers\fs.hpp">
+      <Filter>Header Files\pl\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\helpers\guards.hpp">
+      <Filter>Header Files\pl\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\helpers\types.hpp">
+      <Filter>Header Files\pl\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\helpers\utils.hpp">
+      <Filter>Header Files\pl\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\lib\std\libstd.hpp">
+      <Filter>Header Files\pl\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\lib\std\types.hpp">
+      <Filter>Header Files\pl\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_array_dynamic.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_array_static.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_bitfield.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_boolean.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_character.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_enum.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_float.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_padding.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_pointer.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_signed.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_string.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_struct.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_union.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_unsigned.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_wide_character.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_wide_string.hpp">
+      <Filter>Header Files\pl\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\evaluator.hpp">
+      <Filter>Header Files\pl\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\lexer.hpp">
+      <Filter>Header Files\pl\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\log_console.hpp">
+      <Filter>Header Files\pl\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\parser.hpp">
+      <Filter>Header Files\pl\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\preprocessor.hpp">
+      <Filter>Header Files\pl\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\token.hpp">
+      <Filter>Header Files\pl\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\validator.hpp">
+      <Filter>Header Files\pl\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_array_variable_decl.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_attribute.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_bitfield.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_bitfield_field.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_builtin_type.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_cast.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_compound_statement.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_conditional_statement.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_control_flow_statement.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_enum.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_function_call.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_function_definition.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_literal.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_lvalue_assignment.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_mathematical_expression.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_multi_variable_decl.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_parameter_pack.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_pointer_variable_decl.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_rvalue.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_rvalue_assignment.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_scope_resolution.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_struct.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_ternary_expression.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_type_decl.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_type_operator.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_union.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_variable_decl.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_while_statement.hpp">
+      <Filter>Header Files\pl\core\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\errors\error.hpp">
+      <Filter>Header Files\pl\core\errors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\errors\evaluator_errors.hpp">
+      <Filter>Header Files\pl\core\errors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\errors\lexer_errors.hpp">
+      <Filter>Header Files\pl\core\errors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\errors\parser_errors.hpp">
+      <Filter>Header Files\pl\core\errors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\errors\preprocessor_errors.hpp">
+      <Filter>Header Files\pl\core\errors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\include\pl\core\errors\validator_errors.hpp">
+      <Filter>Header Files\pl\core\errors</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\tests\source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -145,6 +382,60 @@
     </ClCompile>
     <ClCompile Include="..\..\external\fmt\src\os.cc">
       <Filter>fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\pattern_language.cpp">
+      <Filter>Source Files\pl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\evaluator.cpp">
+      <Filter>Source Files\pl\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\lexer.cpp">
+      <Filter>Source Files\pl\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\parser.cpp">
+      <Filter>Source Files\pl\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\preprocessor.cpp">
+      <Filter>Source Files\pl\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\token.cpp">
+      <Filter>Source Files\pl\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\validator.cpp">
+      <Filter>Source Files\pl\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\helpers\file.cpp">
+      <Filter>Source Files\pl\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\helpers\utils.cpp">
+      <Filter>Source Files\pl\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\core.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\file.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\hash.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\math.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\mem.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\pragmas.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\std.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\string.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\time.cpp">
+      <Filter>Source Files\pl\lib\std</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;PL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;PL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -128,7 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;PL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -146,7 +146,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;PL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -173,6 +173,76 @@
     <ClInclude Include="..\..\external\fmt\include\fmt\std.h" />
     <ClInclude Include="..\..\external\fmt\include\fmt\xchar.h" />
     <ClInclude Include="..\..\lib\include\pl.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\api.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_array_variable_decl.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_attribute.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_bitfield.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_bitfield_field.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_builtin_type.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_cast.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_compound_statement.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_conditional_statement.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_control_flow_statement.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_enum.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_function_call.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_function_definition.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_literal.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_lvalue_assignment.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_mathematical_expression.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_multi_variable_decl.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_parameter_pack.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_pointer_variable_decl.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_rvalue.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_rvalue_assignment.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_scope_resolution.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_struct.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_ternary_expression.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_type_decl.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_type_operator.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_union.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_variable_decl.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\ast\ast_node_while_statement.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\errors\error.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\errors\evaluator_errors.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\errors\lexer_errors.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\errors\parser_errors.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\errors\preprocessor_errors.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\errors\validator_errors.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\evaluator.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\lexer.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\log_console.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\parser.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\preprocessor.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\token.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\core\validator.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\helpers\concepts.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\helpers\file.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\helpers\fs.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\helpers\guards.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\helpers\types.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\helpers\utils.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\lib\std\libstd.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\lib\std\types.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_array_dynamic.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_array_static.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_bitfield.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_boolean.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_character.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_enum.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_float.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_padding.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_pointer.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_signed.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_string.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_struct.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_union.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_unsigned.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_wide_character.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\patterns\pattern_wide_string.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\pattern_language.hpp" />
+    <ClInclude Include="..\..\lib\include\pl\pattern_visitor.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_arrays.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_attributes.hpp" />
@@ -193,7 +263,6 @@
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_succeeding_assert.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_unions.hpp" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\external\fmt\src\format.cc">
@@ -208,14 +277,116 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\evaluator.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\lexer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\parser.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\preprocessor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\token.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\core\validator.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\helpers\file.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\helpers\utils.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\core.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\file.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\hash.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\math.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\mem.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\pragmas.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\std.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\string.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\lib\std\time.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\source\pl\pattern_language.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\..\tests\source\main.cpp" />
     <ClCompile Include="..\..\tests\source\tests.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

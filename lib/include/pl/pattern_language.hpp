@@ -12,13 +12,14 @@
 
 #include <IntervalTree.h>
 
+#include <pl/helpers/types.hpp>
+
 #include <pl/api.hpp>
 
 #include <pl/core/log_console.hpp>
 #include <pl/core/token.hpp>
 #include <pl/core/errors/error.hpp>
 
-#include <pl/helpers/types.hpp>
 
 #include "helpers/fs.hpp"
 

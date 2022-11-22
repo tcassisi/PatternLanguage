@@ -49,12 +49,12 @@ namespace pl::lib::libstd::time {
             runtime.addFunction(nsStdTime, "epoch", FunctionParameterCount::exactly(0), [](Evaluator *, auto params) -> std::optional<Token::Literal> {
                 hlp::unused(params);
 
-                return { std::time(nullptr) };
+                return { (u128)std::time(nullptr) };
             });
 
             /* to_local(time) */
             runtime.addFunction(nsStdTime, "to_local", FunctionParameterCount::exactly(1), [](Evaluator *, auto params) -> std::optional<Token::Literal> {
-                time_t time = Token::literalToUnsigned(params[0]);
+                time_t time = (u64)Token::literalToUnsigned(params[0]);
 
                 try {
                     auto localTime = fmt::localtime(time);
@@ -68,7 +68,7 @@ namespace pl::lib::libstd::time {
 
             /* to_utc(time) */
             runtime.addFunction(nsStdTime, "to_utc", FunctionParameterCount::exactly(1), [](Evaluator *, auto params) -> std::optional<Token::Literal> {
-                time_t time = Token::literalToUnsigned(params[0]);
+                time_t time = (u64)Token::literalToUnsigned(params[0]);
 
                 try {
                     auto gmTime = fmt::gmtime(time);

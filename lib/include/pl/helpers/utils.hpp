@@ -15,6 +15,7 @@
 #include <type_traits>
 #include <variant>
 #include <vector>
+#include <algorithm>
 
 namespace pl::hlp {
 

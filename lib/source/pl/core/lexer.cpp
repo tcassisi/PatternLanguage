@@ -47,9 +47,9 @@ namespace pl::core {
             }
 
             char *end    = nullptr;
-            double value = std::strtod(string.begin(), &end);
+            double value = std::strtod(string.data(), &end);
 
-            if (end == string.end()) {
+            if (!*end) {//end == string.end()) {
                 switch (suffix) {
                     case 'd':
                     case 'D':

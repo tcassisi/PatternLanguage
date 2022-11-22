@@ -56,9 +56,9 @@ namespace pl::lib::libstd::mem {
 
             /* find_sequence_in_range(occurrence_index, start_offset, end_offset, bytes...) */
             runtime.addFunction(nsStdMem, "find_sequence_in_range", FunctionParameterCount::moreThan(3), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto occurrenceIndex = Token::literalToUnsigned(params[0]);
-                auto offsetFrom      = Token::literalToUnsigned(params[1]);
-                auto offsetTo        = Token::literalToUnsigned(params[2]);
+                auto occurrenceIndex = (u64)Token::literalToUnsigned(params[0]);
+                auto offsetFrom      = (u64)Token::literalToUnsigned(params[1]);
+                auto offsetTo        = (u64)Token::literalToUnsigned(params[2]);
 
                 std::vector<u8> sequence;
                 for (u32 i = 3; i < params.size(); i++) {
@@ -75,9 +75,9 @@ namespace pl::lib::libstd::mem {
 
             /* find_string_in_range(occurrence_index, start_offset, end_offset, string) */
             runtime.addFunction(nsStdMem, "find_string_in_range", FunctionParameterCount::exactly(4), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto occurrenceIndex = Token::literalToUnsigned(params[0]);
-                auto offsetFrom      = Token::literalToUnsigned(params[1]);
-                auto offsetTo        = Token::literalToUnsigned(params[2]);
+                auto occurrenceIndex = (u64)Token::literalToUnsigned(params[0]);
+                auto offsetFrom      = (u64)Token::literalToUnsigned(params[1]);
+                auto offsetTo        = (u64)Token::literalToUnsigned(params[2]);
                 auto string          = Token::literalToString(params[3], false);
 
                 return findSequence(ctx, occurrenceIndex, offsetFrom, offsetTo, std::vector<u8>(string.data(), string.data() + string.size())).value_or(-1);
@@ -85,9 +85,9 @@ namespace pl::lib::libstd::mem {
 
             /* read_unsigned(address, size, endian) */
             runtime.addFunction(nsStdMem, "read_unsigned", FunctionParameterCount::exactly(3), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto address            = Token::literalToUnsigned(params[0]);
-                auto size               = Token::literalToSigned(params[1]);
-                types::Endian endian    = Token::literalToUnsigned(params[2]);
+                auto address            = (u64)Token::literalToUnsigned(params[0]);
+                auto size               = (i64)Token::literalToSigned(params[1]);
+                types::Endian endian    = (types::Endian)Token::literalToUnsigned(params[2]);
 
                 if (size < 1 || size > 16)
                     err::E0012.throwError(fmt::format("Read size {} is out of range.", size), "Try a value between 1 and 16.");
@@ -101,9 +101,9 @@ namespace pl::lib::libstd::mem {
 
             /* read_signed(address, size, endian) */
             runtime.addFunction(nsStdMem, "read_signed", FunctionParameterCount::exactly(3), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto address            = Token::literalToUnsigned(params[0]);
-                auto size               = Token::literalToSigned(params[1]);
-                types::Endian endian    = Token::literalToUnsigned(params[2]);
+                auto address            = (u64)Token::literalToUnsigned(params[0]);
+                auto size               = (i64)Token::literalToSigned(params[1]);
+                types::Endian endian    = (types::Endian)Token::literalToUnsigned(params[2]);
 
                 if (size < 1 || size > 16)
                     err::E0012.throwError(fmt::format("Read size {} is out of range.", size), "Try a value between 1 and 16.");
@@ -118,8 +118,8 @@ namespace pl::lib::libstd::mem {
 
             /* read_string(address, size, endian) */
             runtime.addFunction(nsStdMem, "read_string", FunctionParameterCount::exactly(2), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto address = Token::literalToUnsigned(params[0]);
-                auto size    = Token::literalToUnsigned(params[1]);
+                auto address = (u64)Token::literalToUnsigned(params[0]);
+                auto size    = (size_t)Token::literalToUnsigned(params[1]);
 
                 std::string result(size, '\x00');
                 ctx->readData(address, result.data(), size, ptrn::Pattern::MainSectionId);
@@ -137,7 +137,7 @@ namespace pl::lib::libstd::mem {
 
             /* delete_section(id) */
             runtime.addFunction(nsStdMem, "delete_section", FunctionParameterCount::exactly(1), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto id = Token::literalToUnsigned(params[0]);
+                auto id = (u64)Token::literalToUnsigned(params[0]);
 
                 ctx->removeSection(id);
 
@@ -146,18 +146,18 @@ namespace pl::lib::libstd::mem {
 
             /* get_section_size(id) -> size */
             runtime.addFunction(nsStdMem, "get_section_size", FunctionParameterCount::exactly(1), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto id = Token::literalToUnsigned(params[0]);
+                auto id = (u64)Token::literalToUnsigned(params[0]);
 
                 return u128(ctx->getSection(id).size());
             });
 
             /* copy_section_to_section(from_id, from_address, to_id, to_address, size) */
             runtime.addFunction(nsStdMem, "copy_to_section", FunctionParameterCount::exactly(5), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto fromId     = Token::literalToUnsigned(params[0]);
-                auto fromAddr   = Token::literalToUnsigned(params[1]);
-                auto toId       = Token::literalToUnsigned(params[2]);
-                auto toAddr     = Token::literalToUnsigned(params[3]);
-                auto size       = Token::literalToUnsigned(params[4]);
+                auto fromId     = (u64)Token::literalToUnsigned(params[0]);
+                auto fromAddr   = (u64)Token::literalToUnsigned(params[1]);
+                auto toId       = (u64)Token::literalToUnsigned(params[2]);
+                auto toAddr     = (u64)Token::literalToUnsigned(params[3]);
+                auto size       = (u64)Token::literalToUnsigned(params[4]);
 
                 std::vector<u8> data(size, 0x00);
                 ctx->readData(fromAddr, data.data(), size, fromId);
@@ -176,8 +176,8 @@ namespace pl::lib::libstd::mem {
 
             /* copy_value_to_section(value, section_id, to_address) */
             runtime.addFunction(nsStdMem, "copy_value_to_section", FunctionParameterCount::exactly(3), [](Evaluator *ctx, auto params) -> std::optional<Token::Literal> {
-                auto toId       = Token::literalToUnsigned(params[1]);
-                auto toAddr     = Token::literalToUnsigned(params[2]);
+                auto toId       = (u64)Token::literalToUnsigned(params[1]);
+                auto toAddr     = (u64)Token::literalToUnsigned(params[2]);
 
                 if (toId == ptrn::Pattern::MainSectionId)
                     err::E0012.throwError("Cannot write to main section.", "The main section represents the currently loaded data and is immutable.");

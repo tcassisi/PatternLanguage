@@ -1,6 +1,6 @@
-#include <pch.h>
-
 #include <array>
+
+#include "pl.hpp"
 
 #include "test_patterns/test_pattern_placement.hpp"
 #include "test_patterns/test_pattern_structs.hpp"

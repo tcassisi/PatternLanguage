@@ -29,13 +29,13 @@ namespace pl::lib::libstd::string {
             /* at(string, index) */
             runtime.addFunction(nsStdString, "at", FunctionParameterCount::exactly(2), [](Evaluator *, auto params) -> std::optional<Token::Literal> {
                 auto string = Token::literalToString(params[0], false);
-                auto index  = Token::literalToSigned(params[1]);
+                auto index  = (std::ptrdiff_t)Token::literalToSigned(params[1]);
 
 #if defined(OS_MACOS)
                 const auto signIndex = index >> (sizeof(index) * 8 - 1);
                 const auto absIndex  = (index ^ signIndex) - signIndex;
 #else
-                const auto absIndex = std::abs(index);
+                const auto absIndex = (size_t)std::abs(index);
 #endif
 
                 if (absIndex > string.length())
@@ -50,8 +50,8 @@ namespace pl::lib::libstd::string {
             /* substr(string, pos, count) */
             runtime.addFunction(nsStdString, "substr", FunctionParameterCount::exactly(3), [](Evaluator *, auto params) -> std::optional<Token::Literal> {
                 auto string = Token::literalToString(params[0], false);
-                auto pos    = Token::literalToUnsigned(params[1]);
-                auto size   = Token::literalToUnsigned(params[2]);
+                auto pos    = (size_t)Token::literalToUnsigned(params[1]);
+                auto size   = (size_t)Token::literalToUnsigned(params[2]);
 
                 if (pos > string.length())
                     err::E0012.throwError(fmt::format("Character index {} out of range of string '{}' with length {}.", pos, string, string.length()));
@@ -62,7 +62,7 @@ namespace pl::lib::libstd::string {
             /* parse_int(string, base) */
             runtime.addFunction(nsStdString, "parse_int", FunctionParameterCount::exactly(2), [](Evaluator *, auto params) -> std::optional<Token::Literal> {
                 auto string = Token::literalToString(params[0], false);
-                auto base   = Token::literalToUnsigned(params[1]);
+                auto base   = (u64)Token::literalToUnsigned(params[1]);
 
                 return i128(std::strtoll(string.c_str(), nullptr, base));
             });

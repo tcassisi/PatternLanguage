@@ -25,7 +25,7 @@ namespace pl::ptrn {
         }
 
         std::string getFormattedValue() override {
-            switch (core::Token::literalToUnsigned(this->getValue())) {
+            switch ((u64)core::Token::literalToUnsigned(this->getValue())) {
                 case 0: return "false";
                 case 1: return "true";
                 default: return "true*";
