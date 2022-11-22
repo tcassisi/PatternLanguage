@@ -1,2 +1,5 @@
 cmake-build-*/
 build/
+/vs/pl/x64/Debug
+/vs/.vs/pl
+/.vs

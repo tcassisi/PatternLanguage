@@ -1,3 +1,5 @@
+#include <pch.h>
+
 #include <array>
 
 #include "test_patterns/test_pattern_placement.hpp"
