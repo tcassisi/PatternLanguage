@@ -369,6 +369,9 @@
     <ClInclude Include="..\..\lib\include\pl\core\errors\validator_errors.hpp">
       <Filter>Header Files\pl\core\errors</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_sections.hpp">
+      <Filter>Header Files\tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\tests\source\main.cpp">

@@ -126,7 +126,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_DEBUG;PL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_DEBUG;PL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -259,6 +259,7 @@
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_placement.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_pointers.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_rvalues.hpp" />
+    <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_sections.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_structs.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_succeeding_assert.hpp" />
     <ClInclude Include="..\..\tests\include\test_patterns\test_pattern_unions.hpp" />

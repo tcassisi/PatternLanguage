@@ -44,6 +44,14 @@ int runTests(int argc, char **argv) {
     }, 0x00, testData.getSize());
 
 
+#ifdef _MSC_VER
+    //INCLUDE PATH
+    std::string buffer;
+    auto b = getenv("LOCALAPPDATA");
+    buffer.append(b).append("\\imhex\\includes");
+    runtime.setIncludePaths({ buffer} );
+#endif
+
     runtime.addFunction({ "std" }, "assert", api::FunctionParameterCount::exactly(2), [](core::Evaluator *ctx, auto params) -> std::optional<core::Token::Literal> {
         auto condition = core::Token::literalToBoolean(params[0]);
         auto message   = core::Token::literalToString(params[1], false);
@@ -114,7 +122,7 @@ int main(int argc, char **argv) {
     if (argc != 2)
     {
         argc = 2;
-        static const char* def[2]  = {"", "Bitfields"};
+        static const char* def[2]  = {"", "Sections"};
         argv = (char**)&def[0];
     }
 
