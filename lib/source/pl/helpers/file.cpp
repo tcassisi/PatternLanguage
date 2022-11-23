@@ -3,6 +3,10 @@
 #else
 #define OS_WINDOWS
 #define _CRT_SECURE_NO_WARNINGS
+#define fseeko64 _fseeki64
+#define ftello64 _ftelli64
+#include <io.h>
+#define ftruncate64 _chsize_s
 #endif
 
 #include <cstring>
@@ -82,7 +86,7 @@ namespace pl::hlp::fs {
     std::vector<u8> File::readBytes(size_t numBytes) {
         if (!isValid()) return {};
 
-        auto size = numBytes ?: getSize();
+        auto size = numBytes ? numBytes : getSize();
         if (size == 0) return {};
 
         std::vector<u8> bytes(size);
