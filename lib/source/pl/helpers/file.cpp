@@ -1,6 +1,9 @@
-//#include <unistd.h>
+#ifndef _MSC_VER
+#include <unistd.h>
+#else
 #define OS_WINDOWS
 #define _CRT_SECURE_NO_WARNINGS
+#endif
 
 #include <cstring>
 
