@@ -92,11 +92,12 @@ namespace pl::core::ast {
             auto leftValue  = static_cast<ASTNodeLiteral *>(leftNode.get())->getValue();
             auto rightValue = static_cast<ASTNodeLiteral *>(rightNode.get())->getValue();
 
-            const auto throwInvalidOperandError = [this] [[noreturn]]{
+            const auto throwInvalidOperandError = [this] /*[[noreturn]]*/ {
                 err::E0002.throwError("Invalid operand used in mathematical expression.", { }, this);
+                return nullptr;
             };
 
-            auto handlePatternOperations = [&, this](auto left, auto right) {
+            auto handlePatternOperations = [&, this](auto left, auto right) -> ASTNodeLiteral* {
                 switch (this->getOperator()) {
                     case Token::Operator::BoolEqual:
                         return new ASTNodeLiteral(left == right);
@@ -111,7 +112,7 @@ namespace pl::core::ast {
                     case Token::Operator::BoolLessThanOrEqual:
                         return new ASTNodeLiteral(left <= right);
                     default:
-                        throwInvalidOperandError();
+                        return throwInvalidOperandError();
                 }
             };
 
@@ -128,10 +129,10 @@ namespace pl::core::ast {
                 [&](ptrn::Pattern *const &left, char right)                 -> ASTNode * { return handlePatternOperations(Token::literalToSigned(left->getValue()), right); },
                 [&](ptrn::Pattern *const &left, bool right)                 -> ASTNode * { return handlePatternOperations(Token::literalToBoolean(left->getValue()), right); },
                 [&](ptrn::Pattern *const &left, const std::string &right)   -> ASTNode * { return handlePatternOperations(Token::literalToString(left->getValue(), true), right); },
-                [&](u128, const std::string &)                              -> ASTNode * { throwInvalidOperandError(); },
-                [&](i128, const std::string &)                              -> ASTNode * { throwInvalidOperandError(); },
-                [&](double, const std::string &)                            -> ASTNode * { throwInvalidOperandError(); },
-                [&](bool, const std::string &)                              -> ASTNode * { throwInvalidOperandError(); },
+                [&](u128, const std::string &)                              -> ASTNode * { return throwInvalidOperandError(); },
+                [&](i128, const std::string &)                              -> ASTNode * { return throwInvalidOperandError(); },
+                [&](double, const std::string &)                            -> ASTNode * { return throwInvalidOperandError(); },
+                [&](bool, const std::string &)                              -> ASTNode * { return throwInvalidOperandError(); },
                 [&, this](ptrn::Pattern *const &left, ptrn::Pattern *const &right) -> ASTNode * {
                     std::vector<u8> leftBytes(left->getSize()), rightBytes(right->getSize());
 
@@ -143,7 +144,7 @@ namespace pl::core::ast {
                         case Token::Operator::BoolNotEqual:
                             return new ASTNodeLiteral(leftBytes != rightBytes);
                         default:
-                            throwInvalidOperandError();
+                            return throwInvalidOperandError();
                     }
                 },
                 [&, this](const std::string &left, auto right) -> ASTNode * {
@@ -159,7 +160,7 @@ namespace pl::core::ast {
                                 return new ASTNodeLiteral(result);
                             }
                         default:
-                            throwInvalidOperandError();
+                            return throwInvalidOperandError();
                     }
                 },
                 [&, this](const std::string &left, const std::string &right) -> ASTNode * {
@@ -179,7 +180,7 @@ namespace pl::core::ast {
                         case Token::Operator::BoolLessThanOrEqual:
                             return new ASTNodeLiteral(left <= right);
                         default:
-                            throwInvalidOperandError();
+                            return throwInvalidOperandError();
                     }
                 },
                 [&, this](const std::string &left, char right) -> ASTNode * {
@@ -187,7 +188,7 @@ namespace pl::core::ast {
                         case Token::Operator::Plus:
                             return new ASTNodeLiteral(left + right);
                         default:
-                            throwInvalidOperandError();
+                            return throwInvalidOperandError();
                     }
                 },
                 [&, this](char left, const std::string &right) -> ASTNode * {
@@ -195,7 +196,7 @@ namespace pl::core::ast {
                         case Token::Operator::Plus:
                             return new ASTNodeLiteral(left + right);
                         default:
-                            throwInvalidOperandError();
+                            return throwInvalidOperandError();
                     }
                 },
                 [&, this](auto left, auto right) -> ASTNode * {
@@ -248,7 +249,7 @@ namespace pl::core::ast {
                         case Token::Operator::BoolNot:
                             return new ASTNodeLiteral(bool(!right));
                         default:
-                            throwInvalidOperandError();
+                            return throwInvalidOperandError();
                     }
                 }
             },

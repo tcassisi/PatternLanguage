@@ -33,7 +33,7 @@ namespace pl::ptrn {
 
         std::string getFormattedValue() override {
             auto data = core::Token::literalToSigned(this->getValue());
-            auto size = (size_t)this->getSize();
+            auto size = (u8)this->getSize();
             return this->formatDisplayValue(fmt::format("{:d} (0x{:0{}X})", data, u128(data) & hlp::bitmask(8 * size), size * 2), this->getValue());
         }
 

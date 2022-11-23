@@ -42,7 +42,7 @@ namespace pl::lib::libstd {
             auto limit = tlimit.value();
 
             runtime.getInternals().evaluator->setEvaluationDepth(limit);
-            runtime.getInternals().validator->setRecursionDepth(limit);
+            runtime.getInternals().validator->setRecursionDepth((u32)limit);
             return true;
         });
 

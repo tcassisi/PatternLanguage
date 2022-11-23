@@ -40,11 +40,13 @@ namespace pl {
     template<>
     struct is_integral_helper<i64> : public std::true_type { };
 
+#ifndef _MSC_VER
     template<>
     struct is_integral_helper<u128> : public std::true_type { };
 
     template<>
     struct is_integral_helper<i128> : public std::true_type { };
+#endif
 
     template<>
     struct is_integral_helper<bool> : public std::true_type { };
@@ -83,8 +85,10 @@ namespace pl {
     template<>
     struct is_signed_helper<i64> : public std::true_type { };
 
+#ifndef _MSC_VER
     template<>
     struct is_signed_helper<i128> : public std::true_type { };
+#endif
 
     template<>
     struct is_signed_helper<char> : public std::true_type { };

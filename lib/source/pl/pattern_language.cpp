@@ -232,11 +232,11 @@ namespace pl {
     }
 
     u32 PatternLanguage::getCreatedPatternCount() const {
-        return this->m_internals.evaluator->getPatternCount();
+        return (u32)this->m_internals.evaluator->getPatternCount();
     }
 
     u32 PatternLanguage::getMaximumPatternCount() const {
-        return this->m_internals.evaluator->getPatternLimit();
+        return (u32)this->m_internals.evaluator->getPatternLimit();
     }
 
     const std::vector<u8>& PatternLanguage::getSection(u64 id) {

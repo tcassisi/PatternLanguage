@@ -1,5 +1,4 @@
 #pragma once
-
 #include <pl/patterns/pattern.hpp>
 
 #include <codecvt>
@@ -28,7 +27,7 @@ namespace pl::ptrn {
 
         [[nodiscard]] std::string toString() const override {
             auto value = this->getValue();
-            char16_t character = core::Token::literalToUnsigned(value);
+            char16_t character = (char16_t)core::Token::literalToUnsigned(value);
             character = hlp::changeEndianess(character, this->getEndian());
 
             auto result = std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>("???").to_bytes(character);

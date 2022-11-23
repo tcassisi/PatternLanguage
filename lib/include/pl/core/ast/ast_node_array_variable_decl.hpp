@@ -288,7 +288,7 @@ namespace pl::core::ast {
                         evaluator->setCurrentArrayIndex(i);
 
                         auto patterns = this->m_type->createPatterns(evaluator);
-                        size_t patternCount = patterns.size();
+                        auto patternCount = (u32)patterns.size();
 
                         if (arrayPattern->getSection() == ptrn::Pattern::MainSectionId)
                             if ((evaluator->dataOffset() - evaluator->getDataBaseAddress()) > (evaluator->getDataSize() + 1))
@@ -318,7 +318,7 @@ namespace pl::core::ast {
                         evaluator->setCurrentControlFlowStatement(ControlFlowStatement::None);
 
                         auto patterns       = this->m_type->createPatterns(evaluator);
-                        size_t patternCount = patterns.size();
+                        auto patternCount = (u32)patterns.size();
 
                         if (arrayPattern->getSection() == ptrn::Pattern::MainSectionId)
                             if ((evaluator->dataOffset() - evaluator->getDataBaseAddress()) > (evaluator->getDataSize() + 1))

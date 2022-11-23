@@ -48,7 +48,7 @@ namespace pl::core::ast {
             const auto literal = dynamic_cast<ASTNodeLiteral *>(node.get());
 
             if (this->getLValueName() == "$")
-                evaluator->dataOffset() = Token::literalToUnsigned(literal->getValue());
+                evaluator->dataOffset() = (u64)Token::literalToUnsigned(literal->getValue());
             else
                 evaluator->setVariable(this->getLValueName(), literal->getValue());
 
