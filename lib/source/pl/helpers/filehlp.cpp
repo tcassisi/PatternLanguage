@@ -166,7 +166,7 @@ namespace pl::hlp::fs {
     void File::setSize(u64 size) {
         if (!isValid()) return;
 
-        auto result = ftruncate64(fileno(this->m_file), size);
+        auto result = ftruncate64(_fileno(this->m_file), size);
         hlp::unused(result);
     }
 

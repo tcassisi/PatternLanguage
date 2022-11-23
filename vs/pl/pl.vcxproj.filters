@@ -404,7 +404,7 @@
     <ClCompile Include="..\..\lib\source\pl\core\validator.cpp">
       <Filter>Source Files\pl\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\lib\source\pl\helpers\file.cpp">
+    <ClCompile Include="..\..\lib\source\pl\helpers\filehlp.cpp">
       <Filter>Source Files\pl\helpers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\lib\source\pl\helpers\utils.cpp">
