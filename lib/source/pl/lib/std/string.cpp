@@ -35,10 +35,10 @@ namespace pl::lib::libstd::string {
                 const auto signIndex = index >> (sizeof(index) * 8 - 1);
                 const auto absIndex  = (index ^ signIndex) - signIndex;
 #else
-                const auto absIndex = (std::string::size_type)std::abs(index);  
+                const auto absIndex = std::abs(index);  
 #endif
 
-                if (absIndex > string.length())
+                if ((std::string::size_type)absIndex > string.length())
                     err::E0012.throwError(fmt::format("Character index {} out of range of string '{}' with length {}.", absIndex, string, string.length()));
 
                 if (index >= 0)
@@ -62,7 +62,7 @@ namespace pl::lib::libstd::string {
             /* parse_int(string, base) */
             runtime.addFunction(nsStdString, "parse_int", FunctionParameterCount::exactly(2), [](Evaluator *, auto params) -> std::optional<Token::Literal> {
                 auto string = Token::literalToString(params[0], false);
-                auto base   = (u64)Token::literalToUnsigned(params[1]);
+                auto base   = (int)Token::literalToUnsigned(params[1]);
 
                 return i128(std::strtoll(string.c_str(), nullptr, base));
             });
