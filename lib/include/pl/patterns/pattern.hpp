@@ -206,7 +206,7 @@ namespace pl::ptrn {
             this->m_section = id;
         }
 
-        [[nodiscard]] u64 getSection() const {
+        [[nodiscard]] virtual u64 getSection() const {
             return this->m_section;
         }
 

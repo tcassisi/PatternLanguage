@@ -21,9 +21,13 @@ namespace pl::ptrn {
             return std::unique_ptr<Pattern>(new PatternBitfieldField(*this));
         }
 
+        [[nodiscard]] virtual u64 getSection() const {
+            return this->m_bitField->getSection();
+        }
+
         [[nodiscard]] core::Token::Literal getValue() const override {
             std::vector<u8> value(this->m_bitField->getSize(), 0);
-            this->getEvaluator()->readData(this->m_bitField->getOffset(), &value[0], value.size(), this->m_bitField->getSection());
+            this->getEvaluator()->readData(this->m_bitField->getOffset(), &value[0], value.size(), this->getSection());
 
             if (this->m_bitField->getEndian() != std::endian::native)
                 std::reverse(value.begin(), value.end());
