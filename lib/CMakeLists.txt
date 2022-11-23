@@ -13,7 +13,7 @@ endif ()
 
 add_library(libpl ${LIBRARY_TYPE}
         source/pl/helpers/utils.cpp
-        source/pl/helpers/file.cpp
+        source/pl/helpers/filehlp.cpp
 
         source/pl/core/token.cpp
         source/pl/pattern_language.cpp
