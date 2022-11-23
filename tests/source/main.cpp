@@ -106,8 +106,17 @@ int runTests(int argc, char **argv) {
     return EXIT_SUCCESS;
 }
 
+//Working folder: $(SolutionDir)..\tests
+//Arguments: Bitfields
 int main(int argc, char **argv) {
     int result = EXIT_SUCCESS;
+
+    if (argc != 2)
+    {
+        argc = 2;
+        static const char* def[2]  = {"", "Bitfields"};
+        argv = (char**)&def[0];
+    }
 
     for (u32 i = 0; i < 16; i++) {
         result = runTests(argc, argv);
