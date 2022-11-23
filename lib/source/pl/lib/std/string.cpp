@@ -35,7 +35,7 @@ namespace pl::lib::libstd::string {
                 const auto signIndex = index >> (sizeof(index) * 8 - 1);
                 const auto absIndex  = (index ^ signIndex) - signIndex;
 #else
-                const auto absIndex = (size_t)std::abs(index);
+                const auto absIndex = (std::string::size_type)std::abs(index);  
 #endif
 
                 if (absIndex > string.length())
